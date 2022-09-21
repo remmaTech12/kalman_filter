@@ -1,0 +1,166 @@
+\hypertarget{classSpringMassDamper}{}\doxysection{Spring\+Mass\+Damper Class Reference}
+\label{classSpringMassDamper}\index{SpringMassDamper@{SpringMassDamper}}
+
+
+Example of state estimation for a spring-\/mass-\/damper system utilizing Kalman filter.  
+
+
+
+
+{\ttfamily \#include $<$spring\+\_\+mass\+\_\+damper.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSpringMassDamper_aba898fcd15789c30ffe584e8f4658b40}{simulate}} ()
+\begin{DoxyCompactList}\small\item\em A\+PI for public\+: Simulate dynamics, estimate states with Kalman filter and output data file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSpringMassDamper_ac84eec7292a35b1eeecd2476fb9b6622}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize system matrices and generate Kalman filter object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpringMassDamper_ad232a1e4ab6f0c7b65285e118e905897}{simulate\+\_\+dynamics}} (const Eigen\+::\+Matrix\+Xf \&Ad, const Eigen\+::\+Matrix\+Xf \&Bd, const Eigen\+::\+Matrix\+Xf \&Cd, const Eigen\+::\+Matrix\+Xf \&Dd)
+\begin{DoxyCompactList}\small\item\em Simulate dynamics with system matrices, states, inputs and random noises. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpringMassDamper_a1a652644de00c38a65041e812fc9d0bf}{estimate\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em Estimate states with Kalman filter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpringMassDamper_a3fbd80cb7eefcc28a352202605be3a9f}{save\+\_\+data\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Save states, input and output data for graph plot. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classSpringMassDamper_a6edb03efa5e9206ac58fec6e9676359a}{get\+\_\+rand\+\_\+m1p1}} ()
+\begin{DoxyCompactList}\small\item\em Get a random number from -\/1 to +1. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classSpringMassDamper_a350c2fada12a565ceb7d771e5c628b2b}{generate\+\_\+rand\+\_\+nd}} (int rand\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Generate normally distributed random numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Example of state estimation for a spring-\/mass-\/damper system utilizing Kalman filter. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpringMassDamper_a1a652644de00c38a65041e812fc9d0bf}\label{classSpringMassDamper_a1a652644de00c38a65041e812fc9d0bf}} 
+\index{SpringMassDamper@{SpringMassDamper}!estimate\_states@{estimate\_states}}
+\index{estimate\_states@{estimate\_states}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{estimate\_states()}{estimate\_states()}}
+{\footnotesize\ttfamily void Spring\+Mass\+Damper\+::estimate\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Estimate states with Kalman filter. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+calculate filtered value
+
+for debug\mbox{\Hypertarget{classSpringMassDamper_a350c2fada12a565ceb7d771e5c628b2b}\label{classSpringMassDamper_a350c2fada12a565ceb7d771e5c628b2b}} 
+\index{SpringMassDamper@{SpringMassDamper}!generate\_rand\_nd@{generate\_rand\_nd}}
+\index{generate\_rand\_nd@{generate\_rand\_nd}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{generate\_rand\_nd()}{generate\_rand\_nd()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Spring\+Mass\+Damper\+::generate\+\_\+rand\+\_\+nd (\begin{DoxyParamCaption}\item[{int}]{rand\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generate normally distributed random numbers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rand\+\_\+size} & size of random number array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$float$>$ return generated random number array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpringMassDamper_a6edb03efa5e9206ac58fec6e9676359a}\label{classSpringMassDamper_a6edb03efa5e9206ac58fec6e9676359a}} 
+\index{SpringMassDamper@{SpringMassDamper}!get\_rand\_m1p1@{get\_rand\_m1p1}}
+\index{get\_rand\_m1p1@{get\_rand\_m1p1}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{get\_rand\_m1p1()}{get\_rand\_m1p1()}}
+{\footnotesize\ttfamily float Spring\+Mass\+Damper\+::get\+\_\+rand\+\_\+m1p1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get a random number from -\/1 to +1. 
+
+\begin{DoxyReturn}{Returns}
+float random number from -\/1 to +1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpringMassDamper_ac84eec7292a35b1eeecd2476fb9b6622}\label{classSpringMassDamper_ac84eec7292a35b1eeecd2476fb9b6622}} 
+\index{SpringMassDamper@{SpringMassDamper}!initialize@{initialize}}
+\index{initialize@{initialize}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Spring\+Mass\+Damper\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize system matrices and generate Kalman filter object. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+physical parameter
+
+system matrices
+
+covariance matrices\mbox{\Hypertarget{classSpringMassDamper_a3fbd80cb7eefcc28a352202605be3a9f}\label{classSpringMassDamper_a3fbd80cb7eefcc28a352202605be3a9f}} 
+\index{SpringMassDamper@{SpringMassDamper}!save\_data\_file@{save\_data\_file}}
+\index{save\_data\_file@{save\_data\_file}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{save\_data\_file()}{save\_data\_file()}}
+{\footnotesize\ttfamily void Spring\+Mass\+Damper\+::save\+\_\+data\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Save states, input and output data for graph plot. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpringMassDamper_aba898fcd15789c30ffe584e8f4658b40}\label{classSpringMassDamper_aba898fcd15789c30ffe584e8f4658b40}} 
+\index{SpringMassDamper@{SpringMassDamper}!simulate@{simulate}}
+\index{simulate@{simulate}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{simulate()}{simulate()}}
+{\footnotesize\ttfamily void Spring\+Mass\+Damper\+::simulate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A\+PI for public\+: Simulate dynamics, estimate states with Kalman filter and output data file. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpringMassDamper_ad232a1e4ab6f0c7b65285e118e905897}\label{classSpringMassDamper_ad232a1e4ab6f0c7b65285e118e905897}} 
+\index{SpringMassDamper@{SpringMassDamper}!simulate\_dynamics@{simulate\_dynamics}}
+\index{simulate\_dynamics@{simulate\_dynamics}!SpringMassDamper@{SpringMassDamper}}
+\doxysubsubsection{\texorpdfstring{simulate\_dynamics()}{simulate\_dynamics()}}
+{\footnotesize\ttfamily void Spring\+Mass\+Damper\+::simulate\+\_\+dynamics (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xf \&}]{Ad,  }\item[{const Eigen\+::\+Matrix\+Xf \&}]{Bd,  }\item[{const Eigen\+::\+Matrix\+Xf \&}]{Cd,  }\item[{const Eigen\+::\+Matrix\+Xf \&}]{Dd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Simulate dynamics with system matrices, states, inputs and random noises. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Ad} & system matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em Bd} & system matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cd} & system matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em Dd} & system matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+parameter for noise and input
+
+generate random numbers for v and w
+
+initialize setting for random number u
+
+generate noise
+
+generate input
+
+calculate states
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+example/include/spring\+\_\+mass\+\_\+damper.\+h\item 
+example/src/spring\+\_\+mass\+\_\+damper.\+cpp\end{DoxyCompactItemize}

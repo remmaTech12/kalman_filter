@@ -1,0 +1,94 @@
+\hypertarget{classKalmanFilter}{}\doxysection{Kalman\+Filter Class Reference}
+\label{classKalmanFilter}\index{KalmanFilter@{KalmanFilter}}
+
+
+Kalman Filter for Linear Systems.  
+
+
+
+
+{\ttfamily \#include $<$kalman\+\_\+filter.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classKalmanFilter_a3fb60c615b68142bb775ecdd1736de4f}{filter}} (const Eigen\+::\+Vector\+Xf \&pre\+\_\+x\+\_\+hat, const Eigen\+::\+Vector\+Xf \&pre\+\_\+u, const Eigen\+::\+Vector\+Xf \&cur\+\_\+y)
+\begin{DoxyCompactList}\small\item\em filtering process of Kalman filter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classKalmanFilter_ad0dfcea9931706c44c20ecfe0337b43c}{warn\+\_\+system\+\_\+matrix\+\_\+inconsistency}} ()
+\begin{DoxyCompactList}\small\item\em Warn if system matrices sizes are inconsistent. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classKalmanFilter_af3d11b26737e9b77adfa18834c61aee0}{check\+\_\+filter\+\_\+matrix\+\_\+vector\+\_\+size}} (const Eigen\+::\+Vector\+Xf \&pre\+\_\+x\+\_\+hat, const Eigen\+::\+Vector\+Xf \&pre\+\_\+u, const Eigen\+::\+Vector\+Xf \&cur\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Check if the sizes of matrices and vectors for filtering are consistent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kalman Filter for Linear Systems. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKalmanFilter_af3d11b26737e9b77adfa18834c61aee0}\label{classKalmanFilter_af3d11b26737e9b77adfa18834c61aee0}} 
+\index{KalmanFilter@{KalmanFilter}!check\_filter\_matrix\_vector\_size@{check\_filter\_matrix\_vector\_size}}
+\index{check\_filter\_matrix\_vector\_size@{check\_filter\_matrix\_vector\_size}!KalmanFilter@{KalmanFilter}}
+\doxysubsubsection{\texorpdfstring{check\_filter\_matrix\_vector\_size()}{check\_filter\_matrix\_vector\_size()}}
+{\footnotesize\ttfamily bool Kalman\+Filter\+::check\+\_\+filter\+\_\+matrix\+\_\+vector\+\_\+size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xf \&}]{pre\+\_\+x\+\_\+hat,  }\item[{const Eigen\+::\+Vector\+Xf \&}]{pre\+\_\+u,  }\item[{const Eigen\+::\+Vector\+Xf \&}]{cur\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if the sizes of matrices and vectors for filtering are consistent. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pre\+\_\+x\+\_\+hat} & previous x\+\_\+hat vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pre\+\_\+u} & previous input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em cur\+\_\+y} & current measurement vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool whether the sizes are consistent 
+\end{DoxyReturn}
+error handling for size inconsistency\mbox{\Hypertarget{classKalmanFilter_a3fb60c615b68142bb775ecdd1736de4f}\label{classKalmanFilter_a3fb60c615b68142bb775ecdd1736de4f}} 
+\index{KalmanFilter@{KalmanFilter}!filter@{filter}}
+\index{filter@{filter}!KalmanFilter@{KalmanFilter}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Kalman\+Filter\+::filter (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xf \&}]{pre\+\_\+x\+\_\+hat,  }\item[{const Eigen\+::\+Vector\+Xf \&}]{pre\+\_\+u,  }\item[{const Eigen\+::\+Vector\+Xf \&}]{cur\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+filtering process of Kalman filter 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pre\+\_\+x\+\_\+hat} & previous x\+\_\+hat vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pre\+\_\+u} & previous input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em cur\+\_\+y} & current measurement vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector\+Xf current x\+\_\+hat vector\+: estimated state 
+\end{DoxyReturn}
+prediction step
+
+filtering step\mbox{\Hypertarget{classKalmanFilter_ad0dfcea9931706c44c20ecfe0337b43c}\label{classKalmanFilter_ad0dfcea9931706c44c20ecfe0337b43c}} 
+\index{KalmanFilter@{KalmanFilter}!warn\_system\_matrix\_inconsistency@{warn\_system\_matrix\_inconsistency}}
+\index{warn\_system\_matrix\_inconsistency@{warn\_system\_matrix\_inconsistency}!KalmanFilter@{KalmanFilter}}
+\doxysubsubsection{\texorpdfstring{warn\_system\_matrix\_inconsistency()}{warn\_system\_matrix\_inconsistency()}}
+{\footnotesize\ttfamily bool Kalman\+Filter\+::warn\+\_\+system\+\_\+matrix\+\_\+inconsistency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Warn if system matrices sizes are inconsistent. 
+
+\begin{DoxyReturn}{Returns}
+bool false if any system matrices sizes are inconsistent, otherwise true 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/kalman\+\_\+filter.\+h\item 
+src/kalman\+\_\+filter.\+cpp\end{DoxyCompactItemize}
